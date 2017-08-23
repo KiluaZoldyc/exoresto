@@ -1,0 +1,96 @@
+/*fonts*/
+@font-face {
+    font-family: 'chinaonenormal';
+    src: url('chinaone-webfont.woff2') format('woff2'),
+         url('chinaone-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'chinaonenormal';
+	text-shadow: #637D8C 1px 1px, #637D8C -1px 1px, #637D8C -1px -1px, #637D8C 1px -1px;
+
+
+	font-size: 10px;
+	/*color: #0056b3;*/
+}
+/*barre nav*/
+.bg{
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'chinaonenormal';
+	font-size: 20px;
+    justify-content: space-around;
+    background-image:url("../img/banner.jpg");
+    padding: 2%;
+}
+/*form plat*/
+.top{
+	background-image:url("../img/restau.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	text-align: center;
+	padding: 5%;
+}
+/*footer*/
+.partners{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	text-align: center;
+	padding: 2%;
+}
+.copyright{
+	padding: 2%;
+}
+/*vignette plats*/
+
+.col-md-4{
+	padding: 1%;
+	margin-top: 2%;
+}
+.ico_plat{
+	width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	/*box-shadow: 2px 2px 6px black;*/
+	padding: 1%;
+}
+
+.plat{
+	margin: 2%;
+	text-align: center;
+}
+.row{
+	background-image:url("../img/restau.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%,100%;
+	background-attachment: fixed;
+    background-position: center; 
+	text-align: center;
+	align-items: auto;
+	padding: 2%;
+}
+/*form menu*/
+.col-md-12{
+	justify-content: space-between;
+	display: flex;
+	padding: 3%;
+}
+.ico_menu{
+	margin-top: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	height: 150px;
+	width: 150px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 6px black;
+	padding: 2%;
+}
+.col-md-6{
+	padding: 2%;
+	display: flex;
+	width: 50%;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}

@@ -1,46 +1,30 @@
 <?php
-include("header.php");
+include("includes/templates/header.php");
+include("connection.php");
 ?>
-
-<?php
-$servername = "localhost";
-$myDB = "restaurant";
-$username = "root";
-$password = "admin";
-
-try {
-    $bdd = new PDO("mysql:host=$servername;dbname=$myDB;charset=utf8", $username, $password);
-    // set the PDO error mode to exception
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully";
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-
+<div class="row">
+    <?php
 // On récupère tout le contenu de la table associations
-$reponse = $bdd->query('SELECT * FROM plat');
-
+    $reponse = $bdd->query('SELECT * FROM plat');
 // On affiche chaque entrée une à une et colonne par colonne
-while ($donnees = $reponse->fetch())
-{
-?>
+    while ($donnees = $reponse->fetch())
+    {
+        ?>
+        <div class="col-md-4 col-md-offset-3">
+           <img class="ico_plat" alt="Votre visuel" src="assets/img/<?php echo $donnees['image']; ?> "/>
+           <h2 class="plat"> <?php echo $donnees['nom']; ?></h2>
+           <h2 class="plat"> <?php echo $donnees['prix']; ?> Euros</h2>
+           <a href="delete_plat.php?id_plat=<?=$donnees['id_plat']?>"><button type="submit">supprimer</button></a>
+           <a href="update_plat.php?id_plat=<?=$donnees['id_plat']?>"><button type="submit">modifier</button></a>
+       </div>
 
-<p>Plat: <?php echo $donnees['nom']; ?>
-Prix: <?php echo $donnees['prix']; ?>
-Img: <?php echo $donnees['image']; ?>
-</p>
-<?php
-}
+       <?php
+   }
 
 $reponse->closeCursor(); // Termine le traitement de la requête
 
 ?>
-    
-<?php
-
-include("footer.php");
-?>
-
-
+</div>
+    <?php
+    include("includes/templates/footer.php");
+    ?>
